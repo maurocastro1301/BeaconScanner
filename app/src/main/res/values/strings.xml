@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">BeaconScanner</string>
+    <string name="app_name">BeaconApp</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_ranging">RangingActivity</string>
 </resources>
