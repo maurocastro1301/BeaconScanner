@@ -17,9 +17,7 @@ import org.altbeacon.beacon.powersave.BackgroundPowerSaver;
 import org.altbeacon.beacon.startup.RegionBootstrap;
 import org.altbeacon.beacon.startup.BootstrapNotifier;
 
-/**
- * Created by dyoung on 12/13/13.
- */
+
 public class BeaconApp extends Application implements BootstrapNotifier {
     private static final String TAG = "AndroidProximityReferenceApplication";
     private RegionBootstrap regionBootstrap;
@@ -34,6 +32,7 @@ public class BeaconApp extends Application implements BootstrapNotifier {
         BeaconManager beaconManager = org.altbeacon.beacon.BeaconManager.getInstanceForApplication(this);
         // beaconManager.setForegroundScanPeriod(2100l);
         // beaconManager.setForegroundBetweenScanPeriod(0500l);
+        // beaconManager.setAndroidLScanningDisabled(true);
 
         // By default the AndroidBeaconLibrary will only find AltBeacons.  If you wish to make it
         // find a different type of beacon, you must specify the byte layout for that beacon's
