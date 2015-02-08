@@ -11,7 +11,10 @@ import org.altbeacon.beacon.BeaconManager;
 import org.altbeacon.beacon.RangeNotifier;
 import org.altbeacon.beacon.Region;
 
+import java.text.SimpleDateFormat;
 import java.util.Collection;
+import java.util.Date;
+import java.util.Locale;
 
 public class RangingActivity extends Activity implements BeaconConsumer {
     protected static final String TAG = "RangingActivity";
@@ -46,7 +49,7 @@ public class RangingActivity extends Activity implements BeaconConsumer {
         @Override 
         public void didRangeBeaconsInRegion(Collection<Beacon> beacons, Region region) {
                 for (Beacon beacon : beacons) {
-                    logToDisplay("The beacon " + beacon.toString() + " is about " + beacon.getDistance() + " meters away.");
+                    logToDisplay(getCurrentTimeStamp() + " | Beacon " + beacon.toString() + " is about " + beacon.getDistance() + " meters away.");
                 }
             /*if (beacons.size() > 0) {
             	EditText editText = (EditText)RangingActivity.this
@@ -66,8 +69,15 @@ public class RangingActivity extends Activity implements BeaconConsumer {
     	    public void run() {
     	    	EditText editText = (EditText)RangingActivity.this
     					.findViewById(R.id.rangingText);
-    	    	editText.append(line+"\n");            	
+    	    	editText.append(line+"\n");
     	    }
     	});
+    }
+
+    private static String getCurrentTimeStamp() {
+        Locale locale = new Locale("es", "ES");
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss.SSS", locale);
+        Date now = new Date();
+        return sdf.format(now);
     }
 }
