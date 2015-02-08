@@ -45,12 +45,15 @@ public class RangingActivity extends Activity implements BeaconConsumer {
         beaconManager.setRangeNotifier(new RangeNotifier() {
         @Override 
         public void didRangeBeaconsInRegion(Collection<Beacon> beacons, Region region) {
-            if (beacons.size() > 0) {
+                for (Beacon beacon : beacons) {
+                    logToDisplay("The beacon " + beacon.toString() + " is about " + beacon.getDistance() + " meters away.");
+                }
+            /*if (beacons.size() > 0) {
             	EditText editText = (EditText)RangingActivity.this
 						.findViewById(R.id.rangingText);
                 Beacon firstBeacon = beacons.iterator().next();
                 logToDisplay("The first beacon "+firstBeacon.toString()+" is about "+firstBeacon.getDistance()+" meters away.");            }
-        }
+        */}
 
         });
 
