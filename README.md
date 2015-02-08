@@ -1,2 +1,2 @@
 # BeaconScanner
-Beacon Scanner using Radius Networks SDK
+Beacon Scanner Android app using Radius Networks SDK
